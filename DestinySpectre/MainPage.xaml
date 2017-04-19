@@ -1,0 +1,111 @@
+﻿<Page x:Class="DestinySpectre.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:DestinySpectre"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <SolidColorBrush x:Key="BackgroundBrush"
+                         Color="#FF0B0E1F" />
+        <SolidColorBrush x:Key="TextBrush"
+                         Color="White" />
+    </Page.Resources>
+
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Text="DESTINY SPECTRE"
+                       Foreground="{StaticResource TextBrush}"
+                       FontSize="36"
+                       Margin="0,0,0,20" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid Margin="0,0,0,10"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  DataContext="{Binding ElementName=CharacterList, Path=SelectedItem}"
+                  Background="Transparent"
+                  PointerPressed="SelectedCharacter_PointerPressed">
+                <local:CharacterBanner Foreground="{StaticResource TextBrush}"
+                                       BackgroundImage="{Binding BackgroundImage}"
+                                       Emblem="{Binding Emblem}"
+                                       ClassType="{Binding ClassType}"
+                                       Level="{Binding Level}" />
+            </Grid>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <TextBlock Text="{Binding DisplayName}"
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           Foreground="{StaticResource TextBrush}"
+                           Margin="0,0,10,0" />
+                <Image Width="42"
+                       Height="42"
+                       Source="{Binding MemberIcon}" />
+            </StackPanel>
+        </Grid>
+        <Pivot Grid.Row="2">
+            <PivotItem Header="EQUIPMENT">
+                <Grid DataContext="{Binding ElementName=CharacterList, Path=SelectedItem}">
+                    <ListView ItemsSource="{Binding Inventory}"
+                              VerticalAlignment="Top"
+                              VerticalContentAlignment="Top"
+                              HorizontalContentAlignment="Left">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal"
+                                                Margin="0,0,0,5">
+                                        <Image Source="{Binding Icon}"
+                                               Height="50"
+                                               Width="50" />
+                                        <TextBlock Text="{Binding ItemName}"
+                                                   FontSize="18"
+                                                   Margin="10,0,0,0"
+                                                   Foreground="{StaticResource TextBrush}"
+                                                   VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="TIER"
+                       Foreground="{StaticResource TextBrush}"
+                       FocusVisualPrimaryBrush="{StaticResource TextBrush}">
+                <Grid>
+                    <TextBlock Text="Coming Soon"
+                               Foreground="{StaticResource TextBrush}" />
+                </Grid>
+            </PivotItem>
+        </Pivot>
+        <Grid Grid.Row="1"
+              Grid.RowSpan="2"
+              Width="400"
+              HorizontalAlignment="Left"
+              Visibility="Collapsed"
+              x:Name="CharacterSelection">
+            <ListView ItemsSource="{Binding Characters}"
+                      x:Name="CharacterList"
+                      SelectionChanged="CharacterList_SelectionChanged"
+                      PointerExited="CharacterList_PointerExited">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:CharacterBanner Foreground="{StaticResource TextBrush}"
+                                               BackgroundImage="{Binding BackgroundImage}"
+                                               Emblem="{Binding Emblem}"
+                                               ClassType="{Binding ClassType}"
+                                               Level="{Binding Level}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
