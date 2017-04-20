@@ -107,6 +107,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DestinyCharacter.cs" />
+    <Compile Include="DestinyGear.cs" />
     <Compile Include="DestinyInventoryItem.cs" />
     <Compile Include="Helpers\ActionCommand.cs" />
     <Compile Include="Destiny.cs" />

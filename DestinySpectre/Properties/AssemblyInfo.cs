@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DestinySpectre")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Destiny Spectre is a companion app for the Bungie game Destiny")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("LarryWeinheimer")]
 [assembly: AssemblyProduct("DestinySpectre")]
 [assembly: AssemblyCopyright("Copyright © Larry Weinheimer 2017")]
 [assembly: AssemblyTrademark("")]

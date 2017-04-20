@@ -4,7 +4,7 @@
   <mp:PhoneIdentity PhoneProductId="9cad2375-90cd-44ec-86d9-09bbd3a1e64d" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>DestinySpectre</DisplayName>
-    <PublisherDisplayName>'Lectric Wings</PublisherDisplayName>
+    <PublisherDisplayName>Larry Weinheimer</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

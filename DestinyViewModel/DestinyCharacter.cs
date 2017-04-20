@@ -16,6 +16,11 @@ namespace DestinyViewModel
             RaisePropertyChanged("Emblem");
         }
 
+        private DestinyGear _gear;
+        public DestinyGear Gear
+        {
+            get { return _gear; }
+        }
         public ImageSource BackgroundImage
         {
             get { return new BitmapImage(new Uri("https://bungie.net" + This.backgroundPath, UriKind.Absolute)); }
@@ -65,6 +70,8 @@ namespace DestinyViewModel
             await This.GetInventory();
             TransferInventory();
             RaisePropertyChanged("Inventory");
+            _gear = new DestinyGear(This);
+            RaisePropertyChanged("Gear");
         }
 
         private ObservableCollection<DestinyInventoryItem> _inventory = new ObservableCollection<DestinyInventoryItem>();

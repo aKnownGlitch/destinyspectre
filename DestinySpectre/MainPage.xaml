@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d"
-      Loaded="Page_Loaded">
+      Loaded="Page_Loaded"
+      RequestedTheme="Dark">
     <Page.Resources>
         <SolidColorBrush x:Key="BackgroundBrush"
                          Color="#FF0B0E1F" />
@@ -51,7 +52,7 @@
             </StackPanel>
         </Grid>
         <Pivot Grid.Row="2">
-            <PivotItem Header="EQUIPMENT">
+            <PivotItem Header="GEAR">
                 <Grid DataContext="{Binding ElementName=CharacterList, Path=SelectedItem}">
                     <ListView ItemsSource="{Binding Inventory}"
                               VerticalAlignment="Top"
@@ -78,6 +79,14 @@
                 </Grid>
             </PivotItem>
             <PivotItem Header="TIER"
+                       Foreground="{StaticResource TextBrush}"
+                       FocusVisualPrimaryBrush="{StaticResource TextBrush}">
+                <Grid>
+                    <TextBlock Text="Coming Soon"
+                               Foreground="{StaticResource TextBrush}" />
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="VEHICLES  &amp; APPEARANCE"
                        Foreground="{StaticResource TextBrush}"
                        FocusVisualPrimaryBrush="{StaticResource TextBrush}">
                 <Grid>

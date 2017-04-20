@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <SolidColorBrush x:Key="BackgroundBrush"
                          Color="#FF0B0E1F" />
-        <Storyboard x:Name="SpectreWait"
+        <Storyboard x:Name="SpectreWaitSB"
                     RepeatBehavior="Forever">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationZ)"
                                            Storyboard.TargetName="SpectreBody">
