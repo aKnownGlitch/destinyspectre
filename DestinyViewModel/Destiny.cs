@@ -38,10 +38,7 @@ namespace DestinyViewModel
         {
             await This.GetPlayer(DisplayName);
             TransferMember();
-            if (CharactersLoaded != null)
-            {
-                CharactersLoaded(this, EventArgs.Empty);
-            }
+            CharactersLoaded?.Invoke(this, EventArgs.Empty);
         }
 
         private void TransferMember()

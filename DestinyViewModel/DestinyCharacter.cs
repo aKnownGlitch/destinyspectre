@@ -60,6 +60,9 @@ namespace DestinyViewModel
             }
         }
 
+        public delegate void InventoryLoadedEventHandler(object sender, EventArgs e);
+        public event InventoryLoadedEventHandler InventoryLoaded;
+
         public async Task GetInventory()
         {
             await This.GetInventory();
@@ -67,6 +70,7 @@ namespace DestinyViewModel
             RaisePropertyChanged("Inventory");
             _gear = new DestinyGear(This);
             RaisePropertyChanged("Gear");
+            InventoryLoaded?.Invoke(this, EventArgs.Empty);
         }
 
         private ObservableCollection<DestinyInventoryItem> _inventory = new ObservableCollection<DestinyInventoryItem>();

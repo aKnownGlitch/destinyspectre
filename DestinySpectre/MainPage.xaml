@@ -55,7 +55,9 @@
             <PivotItem Header="GEAR">
                 <Grid DataContext="{Binding ElementName=CharacterList, Path=SelectedItem}">
                     <Grid DataContext="{Binding Gear}">
+                        <local:SpectreWait x:Name="GearWait" />
                         <local:SpectreGear x:Name="GearControl"
+                                           Visibility="Collapsed"
                                            SubclassName="{Binding Subclass.ItemName}"
                                            SubclassImage="{Binding Subclass.Icon}"
                                            PrimaryImage="{Binding Primary.Icon}"
@@ -70,28 +72,6 @@
                                            ArtifactImage="{Binding Artifact.Icon}"
                                            />
                     </Grid>
-                    <!--<ListView ItemsSource="{Binding Inventory}"
-                              VerticalAlignment="Top"
-                              VerticalContentAlignment="Top"
-                              HorizontalContentAlignment="Left">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <StackPanel Orientation="Horizontal"
-                                                Margin="0,0,0,5">
-                                        <Image Source="{Binding Icon}"
-                                               Height="50"
-                                               Width="50" />
-                                        <TextBlock Text="{Binding ItemName}"
-                                                   FontSize="18"
-                                                   Margin="10,0,0,0"
-                                                   Foreground="{StaticResource TextBrush}"
-                                                   VerticalAlignment="Center" />
-                                    </StackPanel>
-                                </Grid>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>-->
                 </Grid>
             </PivotItem>
             <PivotItem Header="TIER"

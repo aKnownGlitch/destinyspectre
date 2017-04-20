@@ -18,13 +18,20 @@ namespace DestinySpectre
             await data.GetCharacters();
         }
 
-        private void Data_CharactersLoaded(object sender, System.EventArgs e)
+        private async void Data_CharactersLoaded(object sender, System.EventArgs e)
         {
-            foreach(var c in data.Characters)
-            {
-                c.GetInventory().GetAwaiter();
-            }
             CharacterList.SelectedIndex = 0;
+            data.Characters[0].InventoryLoaded += MainPage_InventoryLoaded;
+            foreach (var c in data.Characters)
+            {
+                await c.GetInventory();
+            }
+        }
+
+        private void MainPage_InventoryLoaded(object sender, System.EventArgs e)
+        {
+            GearWait.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            GearControl.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
         private void SelectedCharacter_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
