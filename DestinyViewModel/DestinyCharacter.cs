@@ -16,11 +16,6 @@ namespace DestinyViewModel
             RaisePropertyChanged("Emblem");
         }
 
-        private DestinyGear _gear;
-        public DestinyGear Gear
-        {
-            get { return _gear; }
-        }
         public ImageSource BackgroundImage
         {
             get { return new BitmapImage(new Uri("https://bungie.net" + This.backgroundPath, UriKind.Absolute)); }
@@ -90,5 +85,12 @@ namespace DestinyViewModel
                 }
             }
         }
+
+        private DestinyGear _gear;
+        public DestinyGear Gear
+        {
+            get { return _gear; }
+        }
+
     }
 }

@@ -54,7 +54,23 @@
         <Pivot Grid.Row="2">
             <PivotItem Header="GEAR">
                 <Grid DataContext="{Binding ElementName=CharacterList, Path=SelectedItem}">
-                    <ListView ItemsSource="{Binding Inventory}"
+                    <Grid DataContext="{Binding Gear}">
+                        <local:SpectreGear x:Name="GearControl"
+                                           SubclassName="{Binding Subclass.ItemName}"
+                                           SubclassImage="{Binding Subclass.Icon}"
+                                           PrimaryImage="{Binding Primary.Icon}"
+                                           SecondaryImage="{Binding Secondary.Icon}"
+                                           HeavyImage="{Binding Heavy.Icon}"
+                                           GhostImage="{Binding Ghost.Icon}"
+                                           HelmetImage="{Binding Helmet.Icon}"
+                                           GauntletsImage="{Binding Gauntlets.Icon}"
+                                           ChestArmorImage="{Binding ChestArmor.Icon}"
+                                           BootsImage="{Binding Boots.Icon}"
+                                           ClassItemImage="{Binding ClassItem.Icon}"
+                                           ArtifactImage="{Binding Artifact.Icon}"
+                                           />
+                    </Grid>
+                    <!--<ListView ItemsSource="{Binding Inventory}"
                               VerticalAlignment="Top"
                               VerticalContentAlignment="Top"
                               HorizontalContentAlignment="Left">
@@ -75,7 +91,7 @@
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>
+                    </ListView>-->
                 </Grid>
             </PivotItem>
             <PivotItem Header="TIER"

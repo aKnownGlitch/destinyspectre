@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media;
 
 namespace DestinyViewModel
 {
@@ -18,10 +19,14 @@ namespace DestinyViewModel
                     case "Hunter Subclass":
                     case "Titan Subclass":
                         Subclass = new DestinyInventoryItem(i.item);
+                        RaisePropertyChanged("Subclass");
+                        SubclassIcon = Subclass.Icon;
+                        RaisePropertyChanged("SubclassIcon");
                         break;
                     case "Hand Cannon":
                     case "Fusion Rifle":
                     case "Auto Rifle":
+                    case "Scout Rifle":
                         Primary = new DestinyInventoryItem(i.item);
                         break;
                     case "Shotgun":
@@ -39,7 +44,7 @@ namespace DestinyViewModel
                         Helmet = new DestinyInventoryItem(i.item);
                         break;
                     case "Chest Armor":
-                        ChestPiece = new DestinyInventoryItem(i.item);
+                        ChestArmor = new DestinyInventoryItem(i.item);
                         break;
                     case "Gauntlets":
                         Gauntlets = new DestinyInventoryItem(i.item);
@@ -64,6 +69,7 @@ namespace DestinyViewModel
             }
         }
 
+        public ImageSource SubclassIcon { get; set; }
         public DestinyInventoryItem Subclass { get; set; }
         public DestinyInventoryItem Primary { get; set; }
         public DestinyInventoryItem Secondary { get; set; }
@@ -71,7 +77,7 @@ namespace DestinyViewModel
         public DestinyInventoryItem Ghost { get; set; }
         public DestinyInventoryItem Helmet { get; set; }
         public DestinyInventoryItem Gauntlets { get; set; }
-        public DestinyInventoryItem ChestPiece { get; set; }
+        public DestinyInventoryItem ChestArmor { get; set; }
         public DestinyInventoryItem Boots { get; set; }
         public DestinyInventoryItem ClassItem { get; set; }
         public DestinyInventoryItem Artifact { get; set; }
