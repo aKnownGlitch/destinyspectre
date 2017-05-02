@@ -12,15 +12,11 @@ namespace DestinyViewModel
         {
             RaisePropertyChanged("BackgroundImage");
             RaisePropertyChanged("Level");
+            RaisePropertyChanged("LightLevel");
             RaisePropertyChanged("ClassType");
             RaisePropertyChanged("Emblem");
         }
 
-        private DestinyGear _gear;
-        public DestinyGear Gear
-        {
-            get { return _gear; }
-        }
         public ImageSource BackgroundImage
         {
             get { return new BitmapImage(new Uri("https://bungie.net" + This.backgroundPath, UriKind.Absolute)); }
@@ -31,6 +27,14 @@ namespace DestinyViewModel
             get
             {
                 return This.characterLevel.ToString();
+            }
+        }
+
+        public string LightLevel
+        {
+            get
+            {
+                return This.characterBase.powerLevel.ToString();
             }
         }
 
@@ -65,6 +69,9 @@ namespace DestinyViewModel
             }
         }
 
+        public delegate void InventoryLoadedEventHandler(object sender, EventArgs e);
+        public event InventoryLoadedEventHandler InventoryLoaded;
+
         public async Task GetInventory()
         {
             await This.GetInventory();
@@ -72,6 +79,7 @@ namespace DestinyViewModel
             RaisePropertyChanged("Inventory");
             _gear = new DestinyGear(This);
             RaisePropertyChanged("Gear");
+            InventoryLoaded?.Invoke(this, EventArgs.Empty);
         }
 
         private ObservableCollection<DestinyInventoryItem> _inventory = new ObservableCollection<DestinyInventoryItem>();
@@ -90,5 +98,12 @@ namespace DestinyViewModel
                 }
             }
         }
+
+        private DestinyGear _gear;
+        public DestinyGear Gear
+        {
+            get { return _gear; }
+        }
+
     }
 }

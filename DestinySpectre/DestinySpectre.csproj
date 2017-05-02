@@ -101,12 +101,27 @@
     <Compile Include="Controls\CharacterBanner.xaml.cs">
       <DependentUpon>CharacterBanner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Indicators\GrimoireIndicator.xaml.cs">
+      <DependentUpon>GrimoireIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Indicators\LightIndicator.xaml.cs">
+      <DependentUpon>LightIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Indicators\TierIndicator.xaml.cs">
+      <DependentUpon>TierIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\SpectreWait.xaml.cs">
       <DependentUpon>SpectreWait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\SpectreGear.xaml.cs">
+      <DependentUpon>SpectreGear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\SpectreTier.xaml.cs">
+      <DependentUpon>SpectreTier.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +178,11 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <None Include="Package.StoreAssociation.xml" />
+    <Content Include="DestinyImages\discipline.png" />
+    <Content Include="DestinyImages\Grimoire.png" />
+    <Content Include="DestinyImages\intellect.png" />
+    <Content Include="DestinyImages\Light.png" />
+    <Content Include="DestinyImages\strength.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
@@ -180,11 +200,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Indicators\GrimoireIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Indicators\LightIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Indicators\TierIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\SpectreWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panels\SpectreGear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panels\SpectreTier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
