@@ -11,6 +11,11 @@ namespace DestinyViewModel
     {
         public DestinyGear(DestinyAPI.Character character) : base(character)
         {
+            LightLevel = This.characterBase.powerLevel.ToString();
+            IntellectLevel = This.characterBase.stats.STAT_INTELLECT.value.ToString();
+            DisciplineLevel = This.characterBase.stats.STAT_DISCIPLINE.value.ToString();
+            StrengthLevel = This.characterBase.stats.STAT_STRENGTH.value.ToString();
+
             foreach(var i in This.Inventory.items)
             {
                 switch (i.item.itemTypeName)
@@ -69,6 +74,10 @@ namespace DestinyViewModel
             }
         }
 
+        public string LightLevel { get; set; }
+        public string IntellectLevel { get; set; }
+        public string DisciplineLevel { get; set; }
+        public string StrengthLevel { get; set; }
         public ImageSource SubclassIcon { get; set; }
         public DestinyInventoryItem Subclass { get; set; }
         public DestinyInventoryItem Primary { get; set; }

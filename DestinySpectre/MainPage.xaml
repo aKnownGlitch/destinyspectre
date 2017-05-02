@@ -58,6 +58,10 @@
                         <local:SpectreWait x:Name="GearWait" />
                         <local:SpectreGear x:Name="GearControl"
                                            Visibility="Collapsed"
+                                           LightLevel="{Binding LightLevel}"
+                                           IntellectLevel="{Binding IntellectLevel}"
+                                           DisciplineLevel="{Binding DisciplineLevel}"
+                                           StrengthLevel="{Binding StrengthLevel}"
                                            SubclassName="{Binding Subclass.ItemName}"
                                            SubclassImage="{Binding Subclass.Icon}"
                                            PrimaryImage="{Binding Primary.Icon}"

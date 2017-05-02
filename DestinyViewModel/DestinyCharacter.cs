@@ -12,6 +12,7 @@ namespace DestinyViewModel
         {
             RaisePropertyChanged("BackgroundImage");
             RaisePropertyChanged("Level");
+            RaisePropertyChanged("LightLevel");
             RaisePropertyChanged("ClassType");
             RaisePropertyChanged("Emblem");
         }
@@ -26,6 +27,14 @@ namespace DestinyViewModel
             get
             {
                 return This.characterLevel.ToString();
+            }
+        }
+
+        public string LightLevel
+        {
+            get
+            {
+                return This.characterBase.powerLevel.ToString();
             }
         }
 

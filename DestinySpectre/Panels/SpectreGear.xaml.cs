@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -19,6 +8,36 @@ namespace DestinySpectre
 {
     public sealed partial class SpectreGear : UserControl
     {
+        public string LightLevel
+        {
+            get { return GetValue(LightLevelProperty) as string; }
+            set { SetValue(LightLevelProperty, value); }
+        }
+        public static readonly DependencyProperty LightLevelProperty =
+            DependencyProperty.Register("LightLevel", typeof(string), typeof(SpectreGear), new PropertyMetadata(""));
+        public string IntellectLevel
+        {
+            get { return GetValue(IntellectLevelProperty) as string; }
+            set { SetValue(IntellectLevelProperty, value); }
+        }
+        public static readonly DependencyProperty IntellectLevelProperty =
+            DependencyProperty.Register("IntellectLevel", typeof(string), typeof(SpectreGear), new PropertyMetadata(""));
+        public string DisciplineLevel
+        {
+            get { return GetValue(DisciplineLevelProperty) as string; }
+            set { SetValue(DisciplineLevelProperty, value); }
+        }
+        public static readonly DependencyProperty DisciplineLevelProperty =
+            DependencyProperty.Register("DisciplineLevel", typeof(string), typeof(SpectreGear), new PropertyMetadata(""));
+
+        public string StrengthLevel
+        {
+            get { return GetValue(StrengthLevelProperty) as string; }
+            set { SetValue(StrengthLevelProperty, value); }
+        }
+        public static readonly DependencyProperty StrengthLevelProperty =
+            DependencyProperty.Register("StrengthLevel", typeof(string), typeof(SpectreGear), new PropertyMetadata(""));
+
         public string SubclassName
         {
             get { return GetValue(SubclassNameProperty) as string; }
