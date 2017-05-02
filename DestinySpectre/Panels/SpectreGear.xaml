@@ -35,7 +35,7 @@
                     BorderBrush="White"
                     Grid.Row="0"
                     Grid.Column="1"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="Right"
                     Grid.RowSpan="2">
                 <Image x:Name="imageSC"
                        Source="{Binding Path=SubclassImage}" />
@@ -44,7 +44,7 @@
                     BorderBrush="White"
                     Grid.Row="3"
                     Grid.Column="1"
-                    HorizontalAlignment="Left">
+                    HorizontalAlignment="Right">
                 <Image x:Name="imagePri"
                        Source="{Binding Path=PrimaryImage}" />
             </Border>
@@ -52,7 +52,7 @@
                     BorderBrush="White"
                     Grid.Row="5"
                     Grid.Column="1"
-                    HorizontalAlignment="Left">
+                    HorizontalAlignment="Right">
                 <Image x:Name="imageSec"
                        Source="{Binding Path=SecondaryImage}" />
             </Border>
@@ -60,7 +60,7 @@
                     BorderBrush="White"
                     Grid.Row="7"
                     Grid.Column="1"
-                    HorizontalAlignment="Left">
+                    HorizontalAlignment="Right">
                 <Image x:Name="imageHev"
                        Source="{Binding Path=HeavyImage}" />
             </Border>
@@ -68,7 +68,7 @@
                     BorderBrush="White"
                     Grid.Row="9"
                     Grid.Column="1"
-                    HorizontalAlignment="Left">
+                    HorizontalAlignment="Right">
                 <Image x:Name="imageGhost"
                        Source="{Binding Path=GhostImage}" />
             </Border>
@@ -120,6 +120,11 @@
                 <Image x:Name="imageArt"
                        Source="{Binding Path=ArtifactImage}" />
             </Border>
+            <local:GrimoireIndicator Level="{Binding Path=GrimoireLevel}"
+                                     Grid.Column="2"
+                                     Grid.Row="1"
+                                     Margin="10,0,0,0"
+                                     HorizontalAlignment="Left" />
             <local:LightIndicator Level="{Binding Path=LightLevel}"
                                   Grid.Column="2"
                                   Grid.Row="1"

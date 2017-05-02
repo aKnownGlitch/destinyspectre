@@ -15,6 +15,13 @@ namespace DestinySpectre
         }
         public static readonly DependencyProperty LightLevelProperty =
             DependencyProperty.Register("LightLevel", typeof(string), typeof(SpectreGear), new PropertyMetadata(""));
+        public string GrimoireLevel
+        {
+            get { return GetValue(GrimoireLevelProperty) as string; }
+            set { SetValue(GrimoireLevelProperty, value); }
+        }
+        public static readonly DependencyProperty GrimoireLevelProperty =
+            DependencyProperty.Register("GrimoireLevel", typeof(string), typeof(SpectreGear), new PropertyMetadata(""));
         public string IntellectLevel
         {
             get { return GetValue(IntellectLevelProperty) as string; }

@@ -101,6 +101,9 @@
     <Compile Include="Controls\CharacterBanner.xaml.cs">
       <DependentUpon>CharacterBanner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Indicators\GrimoireIndicator.xaml.cs">
+      <DependentUpon>GrimoireIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Indicators\LightIndicator.xaml.cs">
       <DependentUpon>LightIndicator.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
     <Page Include="Controls\CharacterBanner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Indicators\GrimoireIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Indicators\LightIndicator.xaml">
       <SubType>Designer</SubType>

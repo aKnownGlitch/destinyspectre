@@ -59,6 +59,7 @@
                         <local:SpectreGear x:Name="GearControl"
                                            Visibility="Collapsed"
                                            LightLevel="{Binding LightLevel}"
+                                           GrimoireLevel="{Binding GrimoireLevel}"
                                            IntellectLevel="{Binding IntellectLevel}"
                                            DisciplineLevel="{Binding DisciplineLevel}"
                                            StrengthLevel="{Binding StrengthLevel}"

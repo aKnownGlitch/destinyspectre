@@ -12,6 +12,7 @@ namespace DestinyViewModel
         public DestinyGear(DestinyAPI.Character character) : base(character)
         {
             LightLevel = This.characterBase.powerLevel.ToString();
+            GrimoireLevel = This.characterBase.grimoireScore.ToString();
             IntellectLevel = This.characterBase.stats.STAT_INTELLECT.value.ToString();
             DisciplineLevel = This.characterBase.stats.STAT_DISCIPLINE.value.ToString();
             StrengthLevel = This.characterBase.stats.STAT_STRENGTH.value.ToString();
@@ -75,6 +76,7 @@ namespace DestinyViewModel
         }
 
         public string LightLevel { get; set; }
+        public string GrimoireLevel { get; set; }
         public string IntellectLevel { get; set; }
         public string DisciplineLevel { get; set; }
         public string StrengthLevel { get; set; }
